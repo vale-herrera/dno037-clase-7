@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;800&display=swap');
+
 :root {
-    --fondo: #ebd8df;
-    --figura: #263238;
-    --destacado: #4f5b62;
-    --activo: #000a12;
+    --fondo: #F0E7F4;
+    --figura: #5b4777;
+    --destacado: #3d2e51;
+    --activo: #9786B0;
 }
 
 body {
     color: var(--figura);
     background: var(--fondo);
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 100%;
     line-height: 1.6;
     text-align: left;
@@ -98,7 +100,7 @@ section {
 section div {
     width: 22%;
     margin: 1.5%;
-    background: #cfd8dc;
+    background: #d5c7eb;
 }
 
 @media screen and (orientation: portrait) {
