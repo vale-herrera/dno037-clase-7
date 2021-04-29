@@ -22,7 +22,7 @@
         </header>
         <main class="page">
             <h2>Titanic</h2>
-            <div id="mapa" style="width: 100%; height: 50vh;"></div>
+            <div id="mapa" style="width: 100%; height: 60vh;"></div>
         </main>
         <footer>
             <p><a href="https://github.com/vale-herrera"> Valentina Herrera</a> <a href="https://github.com/profesorfaco/dno037-2021"> — Diseño y Nuevos Medios</a></p>
@@ -58,7 +58,7 @@
                     console.log(Cherburgo.length);
                     console.log(Queenstown.length);
 
-                    var miMapa = L.map("mapa").setView([50.371389,-4.142222], 5);
+                    var miMapa = L.map("mapa").setView([47.141286428748764, -16.46214094032292], 4.4);
 
                     L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw", {
                         maxZoom: 18,
@@ -67,13 +67,13 @@
                         zoomOffset: -1,
                     }).addTo(miMapa);
 
-                    var estilo = { color: "rgb(107, 146, 157)", weight: 1.5, fillColor: "rgb(207, 216, 220)", fillOpacity: 0.75 };
+                    var estilo = { color: "rgb(151, 134, 176)", weight: 2.4, fillColor: "rgb(203, 191, 240)", fillOpacity: 0.75 };
 
-                    L.circle([50.8965, -1.3968], Southampton.length * 100, estilo).addTo(miMapa).bindPopup("En Southampton embarcaron " + Southampton.length + " personas");
+                    L.circle([50.8965, -1.3968], Southampton.length * 120, estilo).addTo(miMapa).bindPopup("En Southampton embarcaron " + Southampton.length + " personas");
 
-                    L.circle([49.659072, -1.611729], Cherburgo.length * 100, estilo).addTo(miMapa).bindPopup("En Cherburgo embarcaron " + Cherburgo.length + " personas");
+                    L.circle([49.659072, -1.611729], Cherburgo.length * 220, estilo).addTo(miMapa).bindPopup("En Cherburgo embarcaron " + Cherburgo.length + " personas");
 
-                    L.circle([51.851, -8.2967], Queenstown.length * 100, estilo).addTo(miMapa).bindPopup("En Queenstown embarcaron " + Queenstown.length + " personas");
+                    L.circle([51.851, -8.2967], Queenstown.length * 220, estilo).addTo(miMapa).bindPopup("En Queenstown embarcaron " + Queenstown.length + " personas");
 
                     var ship = L.icon({
                     iconUrl: 'images/titanic.gif',
@@ -83,7 +83,7 @@
 
                     });
 
-                    L.marker([41.731944, -49.945833], {icon: ship}).addTo(miMapa).bindPopup("Aquí se hundió el Titanic, luego de chocar con un iceberg el 14 de abril de 1912.");
+                    L.marker([41.731944, -49.945833], {icon: ship}).addTo(miMapa).bindPopup("Aquí se hundió el Titanic, luego de chocar con un iceberg el 14 de abril de 1912. 1496 personas murieron en el accidente.");
                 },
             });
         </script>
