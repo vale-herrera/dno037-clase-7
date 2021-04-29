@@ -44,6 +44,11 @@
                     var Southampton = [];
                     var Cherburgo = [];
                     var Queenstown = [];
+                    var Southamptondead = [];
+                    var Cherburgodead = [];
+                    var Queenstowndead = [];
+
+
                     datos.forEach(function (pasajero, i) {
                         if (pasajero.Embarked == "S") {
                             Southampton.push(pasajero);
@@ -58,6 +63,32 @@
                     console.log(Cherburgo.length);
                     console.log(Queenstown.length);
 
+
+
+                  Southampton.forEach(function(pasajero, i) {
+                        if (pasajero.Survived == "0") {
+                            Southamptondead.push(pasajero);
+                        }
+                    });
+
+                    Cherburgo.forEach(function(pasajero, i) {
+                        if (pasajero.Survived == "0") {
+                            Cherburgodead.push(pasajero);
+                        }
+                    });
+
+                    Queenstown.forEach(function(pasajero, i) {
+                        if (pasajero.Survived == "0") {
+                            Queenstowndead.push(pasajero);
+                        }
+                    });
+
+                    console.log(Southamptondead.length);
+                    console.log(Cherburgodead.length);
+                    console.log(Queenstowndead.length);
+
+
+
                     var miMapa = L.map("mapa").setView([47.141286428748764, -16.46214094032292], 4.4);
 
                     L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw", {
@@ -67,13 +98,23 @@
                         zoomOffset: -1,
                     }).addTo(miMapa);
 
-                    var estilo = { color: "rgb(151, 134, 176)", weight: 2.4, fillColor: "rgb(203, 191, 240)", fillOpacity: 0.75 };
+                    var estilo = { color: "rgb(151, 134, 176)", weight: 2.4, fillColor: "rgb(203, 191, 240)", fillOpacity: 0.80 };
+                    var estilodead = { color: "rgb(233, 185, 193)", weight: 2.4, fillColor: "rgb(235, 216, 223)", fillOpacity: 0.80 };
 
                     L.circle([50.8965, -1.3968], Southampton.length * 120, estilo).addTo(miMapa).bindPopup("En Southampton embarcaron " + Southampton.length + " personas");
 
                     L.circle([49.659072, -1.611729], Cherburgo.length * 220, estilo).addTo(miMapa).bindPopup("En Cherburgo embarcaron " + Cherburgo.length + " personas");
 
                     L.circle([51.851, -8.2967], Queenstown.length * 220, estilo).addTo(miMapa).bindPopup("En Queenstown embarcaron " + Queenstown.length + " personas");
+
+
+                    L.circle([50.8965, -1.3968], Southamptondead.length * 120, estilodead).addTo(miMapa).bindPopup( + Southamptondead.length + " personas murieron en el naufragio.");
+
+                    L.circle([49.659072, -1.611729], Cherburgodead.length * 220, estilodead).addTo(miMapa).bindPopup( + Cherburgodead.length + " personas murieron en el naufragio.");
+
+                    L.circle([51.851, -8.2967], Queenstowndead.length * 220, estilodead).addTo(miMapa).bindPopup( + Queenstowndead.length + " personas murieron en el naufragio.");
+
+
 
                     var ship = L.icon({
                     iconUrl: 'images/titanic.gif',
