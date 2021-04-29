@@ -49,9 +49,10 @@
                                 {
                                     label: "Dólar",
                                     data: data,
-                                    backgroundColor: "rgba(207, 216, 220, 0.6)",
-                                    borderColor: "rgba(107, 146, 157,1)",
-                                    borderWidth: 1,
+                                    backgroundColor: "rgba(151, 134, 176, 0.6)",
+                                    borderColor: "rgba(91, 71, 119,1)",
+                                    borderWidth: 1.5,
+                                    lineTension: 0.2
                                 },
                             ],
                         },
@@ -61,15 +62,23 @@
                                     {
                                         ticks: {
                                             beginAtZero: false,
+                                            fontColor: "rgba(61, 46, 81, 0.9)"
                                         },
                                     },
                                 ],
-                            },
-                        },
+                                xAxes: [
+                                    {
+                                       ticks: {
+                                           fontColor: "rgba(61, 46, 81, 0.9)",
+                               },
+                           },
+                        ]
+                    }
+                }
                     });
                 })
                 .fail(function () {
-                    $("main").append("<p>Algo salió mal</p>");
+                    $("main").append("<p>Algo salió mal :(</p>");
                 });
         </script>
     </body>
