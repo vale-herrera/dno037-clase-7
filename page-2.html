@@ -25,7 +25,7 @@
             <div id="mapa" style="width: 100%; height: 50vh;"></div>
         </main>
         <footer>
-            <p>Valentina Herrera — Diseño y Nuevos Medios</p>
+            <p><a href="https://github.com/vale-herrera"> Valentina Herrera</a> <a href="https://github.com/profesorfaco/dno037-2021"> — Diseño y Nuevos Medios</a></p>
         </footer>
         <script>
             document.getElementsByTagName("a")[2].style.textDecorationLine = "underline";
@@ -74,6 +74,16 @@
                     L.circle([49.659072, -1.611729], Cherburgo.length * 100, estilo).addTo(miMapa).bindPopup("En Cherburgo embarcaron " + Cherburgo.length + " personas");
 
                     L.circle([51.851, -8.2967], Queenstown.length * 100, estilo).addTo(miMapa).bindPopup("En Queenstown embarcaron " + Queenstown.length + " personas");
+
+                    var ship = L.icon({
+                    iconUrl: 'images/titanic.gif',
+                    iconSize:     [60, 40],
+                    iconAnchor:   [30, 20],
+                    popupAnchor:  [0, -20]
+
+                    });
+
+                    L.marker([41.731944, -49.945833], {icon: ship}).addTo(miMapa).bindPopup("Aquí se hundió el Titanic, luego de chocar con un iceberg el 14 de abril de 1912.");
                 },
             });
         </script>
